@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta property="dcterms:title" content="Open Maps Viewer​" />
+    <meta property="dcterms:language" content="eng" />
+    <meta property="dcterms:creator" content="Treasury Board of Canada Secretariat" />
+    <meta property="dcterms:service" content="OG-GO" />
+    <meta property="dcterms:accessRights" content="2" />
+
+    <title>Open Maps</title>
+    
+    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/cdts/cdts-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:200,300,400,900|Merriweather" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- GC Adobe Analytics -->
+    <script src="https://assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-S9JG8CZVYZ" async></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S9JG8CZVYZ");</script>
+
+    <!-- Load/activate closure template scripts -->
+    <script
+        src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/cdts/compiled/wet-en.js"
+        data-cdts-setup='{
+            "cdnEnv": "prod",
+            "top": {
+                "lngLinks": [{
+                    "lang": "fr",
+                    "href": "fr.html",
+                    "text": "Français"
+                }],
+                "breadcrumbs": [
+                    {"title": "Canada.ca", "href": "https://www.canada.ca/en.html"},
+                    {"title": "Open Government", "href": "https://open.canada.ca/en"},
+                    {"title": "Search Open Maps", "href": "https://search.open.canada.ca/opendata/?collection=fgp"}
+                ]
+            },
+            "webAnalytics" : [{
+                    "environment" : "production",
+                    "version" : 2,
+                    "custom" : "https://assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"
+                }],
+            "preFooter": {
+                "dateModified": "2026-06-01"
+            },
+            "refFooter": {
+                "webAnalytics" : true
+            }
+        }'></script>
+    <noscript>
+        <!--#include virtual="static/refTop.html" -->
+    </noscript>
+
+</head>
+<body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
+    <div id="cdts-def-top">
+        <!--#include virtual="static/top-en.html" -->
+    </div>
+
+    <main role="main" property="mainContentOfPage" typeof="WebPageElement">
+        <section class="container">
+            <h1 property="name" id="wb-cont" class="mrgn-bttm-lg">Open Maps</h1>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- <div class="alert alert-warning" role="alert">
+                        <p>Open Maps is undergoing maintenance. Certain features will be unavailable during this time. </p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul id="dataset-list"></ul>
+                    <ul id="web-analytics"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- RAMP viewer code from https://github.com/Canadian-Geospatial-Platform/geoview/blob/main/packages/geoview-core/public/templates/demos/demo-open-maps.html -->
+        <section style="padding: 0px 20px;">
+            <div
+                id="MapEN"
+                class="geoview-map"
+                data-lang="en"
+                data-config-url="config/open-maps-config.json">
+            </div>
+        </section>
+
+        <div class="container">
+            <div id="cdts-def-preFooter">
+                <!--#include virtual="static/preFooter-en.html" -->
+            </div>
+        </div>
+    </main>
+    <div id="cdts-def-footer">
+        <!--#include virtual="static/footer-en.html" -->
+    </div>
+    <script>_satellite.pageBottom()</script>
+    <script src="https://viewer-visualiseur.services.geo.ca/apps/GeoView/2.1.2/cgpv-main.js"></script>
+    <script src="js/openmap.js"></script>
+    <script src="js/geoviewer.js"></script>
+</body>
+</html>

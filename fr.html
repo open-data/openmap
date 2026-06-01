@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="msapplication-TileColor" content="#da532c" />
+    <meta property="dcterms:title" content="Visualisateur de Cartes ouvertes​" />
+    <meta property="dcterms:language" content="fra" />
+    <meta property="dcterms:creator" content="Secrétariat du Conseil du Trésor du Canada" />
+    <meta property="dcterms:service" content="OG-GO" />
+    <meta property="dcterms:accessRights" content="2" />
+
+    <title>Cartes ouvertes</title>
+    
+    <link rel="stylesheet" href="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/cdts/cdts-styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:200,300,400,900|Merriweather" rel="stylesheet" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- GC Adobe Analytics -->
+    <script src="https://assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"></script>
+
+    <!-- Google Analytics -->
+    <script src="https://www.googletagmanager.com/gtag/js?id=G-S9JG8CZVYZ" async></script>
+    <script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag("js", new Date());gtag("config", "G-S9JG8CZVYZ");</script>
+
+    <!-- Load/activate closure template scripts -->
+    <script
+        src="https://www.canada.ca/etc/designs/canada/cdts/gcweb/v5_0_5/cdts/compiled/wet-fr.js"
+        data-cdts-setup='{
+            "cdnEnv": "prod",
+            "top": {
+                "lngLinks": [{
+                    "lang": "en",
+                    "href": "en.html",
+                    "text": "English"
+                }],
+                "breadcrumbs": [
+                    {"title": "Canada.ca", "href": "https://www.canada.ca/fr.html"},
+                    {"title": "Gouvernement ouvert", "href": "https://ouvert.canada.ca/fr"},
+                    {"title": "Recherche de cartes ouvertes", "href": "https://rechercher.ouvert.canada.ca/donneesouvertes/?collection=fgp"}
+                ]
+            },
+            "webAnalytics" : [{
+                    "environment" : "production",
+                    "version" : 2,
+                    "custom" : "https://assets.adobedtm.com/be5dfd287373/0127575cd23a/launch-f7c3e6060667.min.js"
+                }],
+            "preFooter": {
+                "dateModified": "2026-06-01"
+            },
+            "refFooter": {
+                "webAnalytics" : true
+            }
+        }'></script>
+    <noscript>
+        <!--#include virtual="static/refTop.html" -->
+    </noscript>
+
+</head>
+<body vocab="http://schema.org/" resource="#wb-webpage" typeof="WebPage">
+    <div id="cdts-def-top">
+        <!--#include virtual="static/top-fr.html" -->
+    </div>
+
+    <main role="main" property="mainContentOfPage" typeof="WebPageElement">
+        <section class="container">
+            <h1 property="name" id="wb-cont" class="mrgn-bttm-lg">Cartes ouvertes</h1>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <!-- <div class="alert alert-warning" role="alert">
+                        <p>Cartes ouvertes est en cours de maintenance. Certaines fonctionnalités ne seront pas disponible pendant cette période.</p>
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <ul id="dataset-list"></ul>
+                    <ul id="web-analytics"></ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- RAMP viewer code from https://github.com/Canadian-Geospatial-Platform/geoview/blob/main/packages/geoview-core/public/templates/demos/demo-open-maps.html -->
+        <section style="padding: 0px 20px;">
+            <div
+                id="MapFR"
+                class="geoview-map"
+                data-lang="fr"
+                data-config-url="config/open-maps-config.json">
+            </div>
+        </section>
+
+        <div class="container">
+            <div id="cdts-def-preFooter">
+                <!--#include virtual="static/preFooter-fr.html" -->
+            </div>
+        </div>
+    </main>
+    <div id="cdts-def-footer">
+        <!--#include virtual="static/footer-fr.html" -->
+    </div>
+    <script>_satellite.pageBottom()</script>
+    <script src="https://viewer-visualiseur.services.geo.ca/apps/GeoView/2.1.2/cgpv-main.js"></script>
+    <script src="js/openmap.js"></script>
+    <script src="js/geoviewer.js"></script>
+</body>
+</html>
