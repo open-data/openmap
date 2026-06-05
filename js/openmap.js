@@ -17,8 +17,6 @@ const langcode = (document.documentElement.lang || '')
                     ? 'fr'
                     : 'en';
 
-const domain = langcode === 'fr' ? "ouvert.canada.ca" : "open.canada.ca";
-
 // Update the language link
 function syncLanguageSwitcherHash() {
     const targetLang = langcode === 'en' ? 'fr' : 'en';
@@ -53,7 +51,7 @@ function renderDatasetLink(uuid) {
             if (!ul) return;
             const li = document.createElement("li");
             const link = document.createElement("a");
-            link.href = `https://${domain}/data/${langcode}/dataset/${uuid}`;
+            link.href = `/data/${langcode}/dataset/${uuid}`;
             link.textContent = title?.[langcode] || uuid;
             link.target = "_blank";
             link.rel = "noopener noreferrer"; 
@@ -86,7 +84,7 @@ function getAnalyticsUrl(uuidList) {
     if (!ul) return;
     const li = document.createElement("li");
     const link = document.createElement("a");
-    link.href = `https://${domain}/data/${langcode}/dataset/`
+    link.href = `/data/${langcode}/dataset/`
         + '2916fad5-ebcc-4c86-b0f3-4f619b29f412/resource/15eeafa2-c331-44e7-b37f-d0d54a51d2eb?filters='
         + encodeURIComponent(filters);
     link.textContent =
