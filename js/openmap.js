@@ -52,7 +52,10 @@ function renderDatasetLink(uuid) {
             const li = document.createElement("li");
             const link = document.createElement("a");
             link.href = `/data/${langcode}/dataset/${uuid}`;
-            link.textContent = title?.[langcode] || uuid;
+            const en = ['en', 'en-t-fr'];
+            const fr = ['fr', 'fr-t-en'];
+            const titleKey = en.includes(langcode) ? 'en' : fr.includes(langcode) ? 'fr' : 'en';
+            link.textContent = title?.[titleKey] || uuid;
             li.appendChild(link);
             ul.appendChild(li);
         })
