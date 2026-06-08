@@ -53,8 +53,6 @@ function renderDatasetLink(uuid) {
             const link = document.createElement("a");
             link.href = `/data/${langcode}/dataset/${uuid}`;
             link.textContent = title?.[langcode] || uuid;
-            link.target = "_blank";
-            link.rel = "noopener noreferrer"; 
             li.appendChild(link);
             ul.appendChild(li);
         })
@@ -91,8 +89,6 @@ function getAnalyticsUrl(uuidList) {
         langcode === 'fr'
             ? "Les données de mesure d'audience"
             : "Web analytics data";
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
     li.appendChild(link);
     ul.appendChild(li);
 }
