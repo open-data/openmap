@@ -11,7 +11,7 @@
     },
     "listOfGeoviewLayerConfig": []
   },
-  "navBar": ["zoom", "fullscreen", "home", "location", "measurement", "basemap-select"],
+  "navBar": ["zoom", "fullscreen", "home", "location", "measurement", "basemap-select", "projection"],
   "appBar": {
     "tabs": {
       "core": ["geolocator", "legend", "details", "export"]
