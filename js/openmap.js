@@ -1,6 +1,6 @@
-// Validate UUIDs passed in the URL
 const UUID_REGEX = /^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i;
 
+// Validate UUIDs passed in the URL
 function getKeys(keys) {
     return keys
         .split(',')
@@ -8,8 +8,6 @@ function getKeys(keys) {
         .filter(uuid => UUID_REGEX.test(uuid))
         .join(',');
 }
-
-const keys = getKeys(window.location.hash.substring(1)); // Remove # symbol
 
 const langcode = (document.documentElement.lang || '')
                     .toLowerCase()
@@ -71,6 +69,7 @@ async function getTitles(uuidList) {
         await renderDatasetLink(uuid);
     }
 }
+
 // Add the Web analytics URL
 function getAnalyticsUrl(uuidList) {
     if (!uuidList) return;
@@ -94,6 +93,18 @@ function getAnalyticsUrl(uuidList) {
     ul.appendChild(li);
 }
 
-window.addEventListener('DOMContentLoaded', syncLanguageSwitcherHash);
-getTitles(keys);
-getAnalyticsUrl(keys);
+function renderFromHash() {
+    keys = getKeys(window.location.hash.substring(1));
+    if (!keys) return;
+    syncLanguageSwitcherHash();
+    getTitles(keys);
+    getAnalyticsUrl(keys);
+}
+window.addEventListener('DOMContentLoaded', renderFromHash);
+
+function safeReloadOnHashChange() {
+    if (window.location.hash && window.location.hash !== '#') {
+        window.location.reload();
+    }
+}
+window.addEventListener('hashchange', safeReloadOnHashChange);
