@@ -58,7 +58,7 @@ function renderDatasetLink(uuid) {
             // generate a page view event in GA4
             gtag('event', 'page_view', {
                 page_location: `${window.location.origin}${window.location.pathname}#${uuid}`,
-                page_path: `${window.location.pathname}#$${uuid}`,
+                page_path: `${window.location.pathname}#${uuid}`,
                 page_title: document.title + '-' + link.textContent.trim()
             });
 
