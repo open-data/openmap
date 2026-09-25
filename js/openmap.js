@@ -54,6 +54,14 @@ function renderDatasetLink(uuid) {
             link.textContent = title[titleKey[0]] ?? title[titleKey[1]] ?? uuid;
             li.appendChild(link);
             ul.appendChild(li);
+
+            // generate a page view event in GA4
+            gtag('event', 'page_view', {
+                page_location: `${window.location.origin}${window.location.pathname}#${uuid}`,
+                page_path: `${window.location.pathname}#$${uuid}`,
+                page_title: document.title + '-' + link.textContent.trim()
+            });
+
         })
         .catch(error => {
             console.error('Failed to load data. Fetch error:', error);
